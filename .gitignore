@@ -11,3 +11,4 @@ build/
 .classpath
 #elasticsearch-grails-plugin
 *.log
+client/yarn.lock

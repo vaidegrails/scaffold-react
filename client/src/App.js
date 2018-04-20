@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Grid } from 'react-bootstrap';
 import AppNav from './AppNav';
+import Menu from './components/Menu';
 
 import grailsLogo from './images/grails-cupsonly-logo-white.svg';
 import reactLogo from './images/logo.svg';
@@ -17,12 +18,13 @@ class App extends Component {
       clientInfo: {
         version: CLIENT_VERSION,
         react: REACT_VERSION
-      }
+      },
+      serverURL: SERVER_URL
     }
   }
 
   componentDidMount() {
-    fetch(SERVER_URL + '/application')
+    fetch(SERVER_URL + 'application')
       .then(r => r.json())
       .then(json => this.setState({serverInfo: json}))
       .catch(error => console.error('Error connecting to server: ' + error));
@@ -36,6 +38,8 @@ class App extends Component {
     return (
       <div>
         <AppNav serverInfo={serverInfo} clientInfo={clientInfo}/>
+
+        <Menu serverURL={this.state.serverURL}/>
         <div className="grails-logo-container">
           <img className="grails-logo" src={grailsLogo} alt="Grails" />
           <span className="plus-logo">+</span>
