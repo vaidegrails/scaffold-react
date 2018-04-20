@@ -18,7 +18,7 @@ class Menu extends Component {
 
   componentDidMount() {
 //    console.log (this.state.serverURL)
-    fetch(this.state.serverURL.serverURL + 'menu')
+    fetch(this.state.serverURL.serverURL + 'meta/menu')
       .then(r => r.json())
       .then(json => this.setState({menus: json})
       )
@@ -37,7 +37,7 @@ class Menu extends Component {
 
           <ul>
             {menus ? menus.data.map(menu => {
-              return <li key={menu.name}><a href={serverURL + menu.name}>{ menu.name }</a> </li>;
+              return <li key={menu.name}><a href={serverURL.serverURL + menu.name}>{ menu.name }</a> </li>;
             }) : null }
 
           </ul>
