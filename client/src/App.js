@@ -39,7 +39,10 @@ class App extends Component {
       <div>
         <AppNav serverInfo={serverInfo} clientInfo={clientInfo}/>
 
-        <Menu serverURL={this.state.serverURL}/>
+
+
+        <Menu serverURL={SERVER_URL}/>
+
         <div className="grails-logo-container">
           <img className="grails-logo" src={grailsLogo} alt="Grails" />
           <span className="plus-logo">+</span>

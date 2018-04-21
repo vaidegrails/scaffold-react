@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-//import { SERVER_URL, CLIENT_VERSION, REACT_VERSION } from './config';
 import 'whatwg-fetch';
+import MenuItem from './MenuItem.js'
+// using ES6 modules
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 class Menu extends Component {
 
@@ -35,12 +37,21 @@ class Menu extends Component {
       <div>
         <div>
 BLAHBLAH
-          <ul>
-            {menus ? menus.data.map(menu => {
-              return <li key={menu.name}><a href={serverURL.serverURL + menu.name}>{ menu.name }</a> </li>;
-            }) : null }
+
+
+        <BrowserRouter>
+            <Switch>
+
+
+              <ul>
+                {menus ? menus.data.map(menu => {
+                  const resultado = <MenuItem menuItem={menu}/>
+                  return resultado
+                }) : null }
 
           </ul>
+          </Switch>
+                  </BrowserRouter>
         </div>
       </div>
     );
