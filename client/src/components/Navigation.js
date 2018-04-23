@@ -3,6 +3,7 @@ import '../css/sb2admin/sb-admin-2.css'
 
 import NavigationBarHeader from './NavigationBarHeader.js'
 import NavigationBarTopLinks from './NavigationBarTopLinks.js'
+import NavigationSideBar from './NavigationSideBar.js'
 
 class Navigation extends Component {
 
@@ -12,10 +13,10 @@ class Navigation extends Component {
 
     //    console.log(menus);
         return (
-//        <!-- Navigation -->
         <nav className="navbar navbar-default navbar-static-top" style={{marginBottom: 0}}>
             <NavigationBarHeader/>
             <NavigationBarTopLinks/>
+            <NavigationSideBar/>
         </nav>
         );
     }

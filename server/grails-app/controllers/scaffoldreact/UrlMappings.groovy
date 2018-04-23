@@ -12,6 +12,8 @@ class UrlMappings {
 
         "/"(controller: 'application', action:'index')
         "/meta/menu"(controller: 'meta', action: 'menu')
+        "/meta/show"(controller: 'meta', action: 'show')
+        "/meta/get/$id"(controller: 'meta', action: 'get')
         "500"(view: '/error')
         "404"(view: '/notFound')
     }

@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 //import AppNav from './AppNav';
 //import Menu from './components/Menu';
 import Navigation from './components/Navigation';
+import PageContent from './components/PageContent';
 
 //import grailsLogo from './images/grails-cupsonly-logo-white.svg';
 //import reactLogo from './images/logo.svg';
@@ -41,6 +42,7 @@ class App extends Component {
     return (
       <div id="wrapper">
         <Navigation/>
+        <PageContent serverURL = {this.state.serverURL}/>
       </div>
     );
   }

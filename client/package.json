@@ -5,6 +5,7 @@
   "dependencies": {
     "@fortawesome/fontawesome": "^1.1.5",
     "@fortawesome/fontawesome-free-solid": "^5.0.10",
+    "@fortawesome/fontawesome-free-webfonts": "^1.0.6",
     "@fortawesome/react-fontawesome": "^0.0.18",
     "jquery": "^3.3.1",
     "metismenu": "^2.7.7",
