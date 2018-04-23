@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import 'whatwg-fetch';
-import { BrowserRouter, NavLink, Route } from 'react-router-dom'
+import { NavLink, Route } from 'react-router-dom'
 import Teste from './Teste';
 
 

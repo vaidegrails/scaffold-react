@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import 'whatwg-fetch';
 import MenuItem from './MenuItem.js'
 // using ES6 modules
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { BrowserRouter, Switch } from 'react-router-dom'
 
 class Menu extends Component {
 
@@ -41,15 +41,13 @@ BLAHBLAH
 
         <BrowserRouter>
             <Switch>
-
-
               <ul>
                 {menus ? menus.data.map(menu => {
                   const resultado = <MenuItem menuItem={menu}/>
                   return resultado
                 }) : null }
 
-          </ul>
+              </ul>
           </Switch>
                   </BrowserRouter>
         </div>
