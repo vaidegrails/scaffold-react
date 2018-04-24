@@ -92,7 +92,7 @@ class ScaffoldPage extends Component {
                         <div key={field.key} className="form-group col-lg-6">
 
 
-                            <label for={"value_"+field.key}>{field.label}</label>
+                            <label htmlFor={"value_"+field.key}>{field.label}</label>
                             <div id={"value_"+field.key}>
                                 {this.state.objectValues[field.key]}
                             </div>

@@ -6,7 +6,16 @@ import NavigationBarTopLinks from './NavigationBarTopLinks.js'
 import NavigationSideBar from './NavigationSideBar.js'
 
 class Navigation extends Component {
+    constructor(props) {
+        super(props);
 
+        this.state = {
+//          scaffoldMeta: props.scaffoldMeta,
+          serverURL: props.serverURL
+
+        }
+
+    }
 
     render() {
 
@@ -16,7 +25,7 @@ class Navigation extends Component {
         <nav className="navbar navbar-default navbar-static-top" style={{marginBottom: 0}}>
             <NavigationBarHeader/>
             <NavigationBarTopLinks/>
-            <NavigationSideBar/>
+            <NavigationSideBar serverURL = {this.state.serverURL}/>
         </nav>
         );
     }

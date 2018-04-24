@@ -52,8 +52,57 @@ const menu = [
 
 class NavigationSideBar extends Component {
 
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            menuData: [],
+            serverURL: props.serverURL
+
+        }
+    }
+
+
+    componentDidMount() {
+        fetch(this.state.serverURL + 'scaffolding/meta/menu', {
+              method: 'GET',
+              headers: {
+                  'Accept': 'application/json',
+                },
+                credentials: 'include'
+
+              })
+                .then(r => r.json())
+                .then(json => {this.setState({menuData: json.data})})
+                .catch(error => console.error('Error connecting to server: ' + error));
+    }
+
 
     render() {
+    console.log("Menu data")
+    console.log(this.state.menuData)
+        const menu = this.state.menuData.map(menuItem => {
+            const newMenuItem = {
+                icon: menuItem.icon.class,
+                label: menuItem.name,
+                to: 'menu-2',
+                content: menuItem.items.map( subMenuItem => {
+                    return {
+                        icon: subMenuItem.icon.class,
+                        label: subMenuItem.name,
+                        to: subMenuItem.url
+
+                    }
+                    })
+
+
+            }
+            return newMenuItem
+
+        })
+
+
+
         return (
             <div className="navbar-default sidebar" role="navigation">
                 <div className="sidebar-nav navbar-collapse">

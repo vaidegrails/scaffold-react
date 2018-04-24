@@ -41,7 +41,7 @@ class App extends Component {
 
     return (
       <div id="wrapper">
-        <Navigation/>
+        <Navigation serverURL = {this.state.serverURL}/>
         <PageContent serverURL = {this.state.serverURL}/>
       </div>
     );
